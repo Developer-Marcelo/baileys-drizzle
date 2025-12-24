@@ -1,0 +1,69 @@
+{
+  "name": "baileys-beginner-drizzle",
+  "version": "1.0.0",
+  "description": "Wrapper simples para Baileys WhatsApp - for beginners",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "npx tsx src/teste.ts",
+    "start": "npx tsx baileys-beginner-drizzle/index.js",
+    "build": "npx tsc && tsc-alias"
+  },
+  "keywords": [
+    "baileys",
+    "whatsapp",
+    "whatsapp-api",
+    "whatsapp-bot",
+    "whatsapp-wrapper",
+    "baileys-wrapper",
+    "baileys-whatsapp",
+    "baileys-clean-architecture",
+    "whatsapp-session",
+    "whatsapp-multi-session",
+    "signal-protocol",
+    "drizzle",
+    "drizzle-orm",
+    "postgres",
+    "nodejs",
+    "typescript",
+    "clean-architecture",
+    "ddd",
+    "for-beginners"
+  ],
+  "author": "Marcelo P. S. P. <desenvolvedoreasycode@gmail.com> (https://github.com/developer-marcelo)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Developer-Marcelo/baileys-beginner-drizzle"
+  },
+  "license": "MIT",
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "@types/pg": "^8.16.0",
+    "@types/qrcode": "^1.5.6",
+    "tsc-alias": "^1.8.16",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@hapi/boom": "^10.0.1",
+    "baileys": "^7.0.0-rc.9",
+    "dotenv": "^17.2.3",
+    "drizzle-orm": "^0.45.1",
+    "pino": "^10.1.0",
+    "qrcode": "^1.5.4"
+  },
+  "overrides": {
+    "esbuild": "0.25.0"
+  }
+}

@@ -1,0 +1,15 @@
+services:
+  postgres:
+    container_name: baileys_pg
+    image: bitnami/postgresql:latest
+    ports:
+      - "5434:5432"
+    environment:
+      POSTGRES_USER: "baileys"
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: baileys
+    volumes:
+      - baileys_pg_data:/bitnami/postgresql
+
+volumes:
+  baileys_pg_data:
