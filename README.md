@@ -1,4 +1,7 @@
-Baileys For Beginners 🚀
+# Baileys + Drizzle ORM 🚀🚀🚀
+
+Gerencie sessões do WhatsApp com Baileys usando Drizzle ORM.  
+Manage WhatsApp sessions with Baileys using Drizzle ORM.
 
 Maintained and developed by Marcelo BRBX.
 This is my first official NPM package, designed to simplify WhatsApp Baileys integrations for the community.
@@ -77,7 +80,7 @@ export const session = pgTable(
 
 📋 Prerequisites (Pre-configuration)
 
-Before installing and using npm install baileys-beginner-drizzle, you must ensure your environment is ready.
+Before installing and using npm install baileys-drizzle, you must ensure your environment is ready.
 
 Database & Drizzle Setup
 
@@ -95,7 +98,7 @@ export const drizzle = drizzleOrm(process.env.DATABASE_URL!);
 1. Installation
 
 ```
-npm install baileys-beginner-drizzle
+npm install baileys-drizzle
 ```
 
 2. Basic Usage
@@ -104,14 +107,27 @@ You don't need to manage sockets or handle complex reconnection logic. Simply in
 
 ```
 import { drizzle } from "./db/drizzle";
-import { WhatsappInterface } from "baileys-beginner-drizzle";
-import { BaileysBeginner } from "baileys-beginner-drizzle";
+import { interceptSessionLogs, WhatsappInterface } from "baileys-drizzle";
+import { BaileysDrizzle } from "baileys-drizzle";
 
 const sessionId = "default";
 const phoneNumber = "5521999999998";
 const browserName = "Chrome";
 
-const baileys = new BaileysBeginner(sessionId, browserName);
+const baileysDrizzle = new BaileysDrizzle(sessionId, browserName);
+
+interceptSessionLogs({
+  ClosingSession: () => console.log("🔐 Renovação de chaves de sessão 123"),
+  OpeningSession: () => console.log("🟢 Sessão criptográfica aberta 123"),
+  RemovingOldClosedSession: () =>
+    console.log("🧹 Limpando sessões criptográficas antigas 123"),
+  MigratingSessionTo: (code) =>
+    console.log("🔄 Migrando estrutura de sessão123:", code),
+  SessionAlreadyClosed: () => console.log("⚠️ Sessão já estava encerrada 123"),
+  SessionAlreadyOpen: () => console.log("⚠️ Sessão já estava aberta 123"),
+  SessionStorageMigrationError: () =>
+    console.log("❌ Erro ao migrar armazenamento de sessão criptográfica 123"),
+});
 
 const config: WhatsappInterface = {
   basic: {
@@ -131,13 +147,17 @@ const config: WhatsappInterface = {
   drizzle,
 };
 
-await baileys.start(config);
+await baileysDrizzle.start(config);
 
 const phoneExample = "5521999999999";
 
+/*
+  const baileys = baileysDrizzle.baileys;
+*/
+
 setInterval(() => {
-  if (baileys.beginner.isConnected()) {
-    baileys.beginner.sendMessage(phoneExample, {
+  if (baileysDrizzle.isConnected) {
+    baileysDrizzle.sendMessage(phoneExample, {
       text: "Hello, World!",
     });
   }
@@ -154,7 +174,7 @@ If you don't provide these callbacks, the logs will still print normally to the 
 Example: Using Specific Session Callbacks
 
 ```
-import { interceptSessionLogs } from "baileys-beginner-drizzle";
+import { interceptSessionLogs } from "baileys-drizzle";
 
 interceptSessionLogs({
   ClosingSession: () => console.log("🔐 Renovação de chaves de sessão"),

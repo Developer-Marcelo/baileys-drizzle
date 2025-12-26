@@ -1,6 +1,6 @@
 export { interceptSessionLogs } from "./internal/console-session-interceptor";
 
-export { BaileysBeginner } from "./libs/baileys-beginners";
+export { BaileysDrizzle } from "./libs/baileys-drizzle";
 export type {
   BrowserName,
   AdvancedWhatsappInterface,

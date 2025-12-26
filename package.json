@@ -1,7 +1,7 @@
 {
-  "name": "baileys-beginner-drizzle",
+  "name": "baileys-drizzle",
   "version": "1.0.0",
-  "description": "Wrapper simples para Baileys WhatsApp - for beginners",
+  "description": "Baileys WhatsApp + Drizzle ORM: gerenciamento de sessões e multi-instâncias com persistência em banco de dados | Session management and multi-instance support",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -16,34 +16,40 @@
   ],
   "scripts": {
     "dev": "npx tsx src/teste.ts",
-    "start": "npx tsx baileys-beginner-drizzle/index.js",
+    "start": "npx tsx baileys-drizzle/index.js",
     "build": "npx tsc && tsc-alias"
   },
   "keywords": [
-    "baileys",
-    "whatsapp",
-    "whatsapp-api",
-    "whatsapp-bot",
-    "whatsapp-wrapper",
-    "baileys-wrapper",
-    "baileys-whatsapp",
-    "baileys-clean-architecture",
-    "whatsapp-session",
-    "whatsapp-multi-session",
-    "signal-protocol",
-    "drizzle",
-    "drizzle-orm",
-    "postgres",
-    "nodejs",
-    "typescript",
-    "clean-architecture",
-    "ddd",
-    "for-beginners"
-  ],
+  "baileys",
+  "baileys-drizzle",
+  "whatsapp",
+  "whatsapp-bot",
+  "bot-whatsapp",
+  "automacao-whatsapp",
+  "whatsapp-api",
+  "api-whatsapp",
+  "whatsapp-js",
+  "whatsapp-session",
+  "sessao-whatsapp",
+  "whatsapp-multidevice",
+  "multi-instancia",
+  "multi-instance",
+  "drizzle",
+  "drizzle-orm",
+  "orm",
+  "database",
+  "typescript",
+  "nodejs",
+  "whatsapp-automation"
+],
   "author": "Marcelo P. S. P. <desenvolvedoreasycode@gmail.com> (https://github.com/developer-marcelo)",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Developer-Marcelo/baileys-beginner-drizzle"
+    "url": "https://github.com/Developer-Marcelo/baileys-drizzle"
+  },
+  "homepage": "https://github.com/Developer-Marcelo/baileys-drizzle#readme",
+  "bugs": {
+    "url": "https://github.com/Developer-Marcelo/baileys-drizzle/issues"
   },
   "license": "MIT",
   "type": "module",
